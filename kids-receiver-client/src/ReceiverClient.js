@@ -28,7 +28,6 @@ class ReceiverClient extends Component {
       <MuiThemeProvider>
         <BrowserRouter>
           <AppNav>
-          <ChartContainer/>
             <div id="section">
             <Section style={{flex:1,marginRight:20,marginLeft:20, marginTop: 10,paddingLeft:20,minHeight:300,}}>
               <div>
@@ -47,8 +46,8 @@ class ReceiverClient extends Component {
               <h1 className="avg-data">4.9</h1>
             </Section>
             <Section style={{flex:1,marginTop: 10,minHeight:300, marginRight:20}}>
-              <SectionTitle title={"Last environment Conditon"} showIcon={true} iconLeft={<IconButton><Refresh /></IconButton>}/>
-              <h1 className="avg-data">Clean</h1>
+              <SectionTitle title={"Average time spent"} showIcon={true} iconLeft={<IconButton><Refresh /></IconButton>}/>
+              <h1 className="avg-data">30 mins</h1>
             </Section>
           </div>
           <div id="section">
