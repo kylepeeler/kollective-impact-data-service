@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "http": "^0.0.0",
+    "itsa-react-docviewer": "^15.0.7",
+    "randomatic": "^1.1.7",
+    "twilio": "^3.4.0"
+  }
+}

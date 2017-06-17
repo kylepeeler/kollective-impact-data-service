@@ -16,10 +16,11 @@ class AppNav extends Component{
   constructor(props){
     super(props);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    injectTapEventPlugin();
     this.state = {
       sidebarOpen: false
     };
-    injectTapEventPlugin();
+
 
   }
 
@@ -41,6 +42,7 @@ class AppNav extends Component{
           <IconButton onTouchTap={this.toggleSidebar}><NavigationClose /></IconButton>
           <MenuItem primaryText="Observation" leftIcon={<NextWeek />} />
           <MenuItem primaryText="Documents" leftIcon={<InsertDriveFile />} />
+          <MenuItem primaryText="Document Viewer" leftIcon={<InsertDriveFile />} />
           <MenuItem primaryText="MOU Agreement" leftIcon={<Assignment />} />
         </Drawer>
       </div>
