@@ -24,6 +24,9 @@
    justify-content:center;
 }
 
+div[role=menu]{
+  padding-top: 0 !important; 
+}
 .avg-data {
   text-align: center;
   font-size: 80px;

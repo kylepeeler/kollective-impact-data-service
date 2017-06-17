@@ -5,10 +5,13 @@ import logo from './logo.svg';
 import './App.css';
 import Section from './components/Section'
 import SectionTitle from './components/SectionTitle'
+import MenuItem from 'material-ui/MenuItem';
+import IconMenu from 'material-ui/IconMenu';
 
 import {BrowserRouter,  Route, Link} from 'react-router-dom';
 
 import Refresh from 'material-ui/svg-icons/navigation/refresh';
+import Messsage from 'material-ui/svg-icons/communication/chat-bubble-outline';
 import IconButton from 'material-ui/IconButton';
 
 import {
@@ -23,6 +26,40 @@ import {
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ChartContainer from './components/chart/ChartContainer'
 class ReceiverClient extends Component {
+  constructor(props){
+    super(props);
+    // id in both message and entries refer to a instance of a row
+    this.state ={
+      observation: [
+    {
+      "enviornmentScore": 1,
+      "enviornmentComment": "Mauris lacinia sapien quis libero.",
+      "moodScore": 4,
+      "moodComment": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+      "stressScore": 4,
+      "stressComment": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+      "overallComment": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
+      "duration": 2.5,
+      "timestamp": "1483921307"
+    },
+    {
+      "enviornmentScore": 3,
+      "enviornmentComment": "Sample Enviornment Comment.",
+      "moodScore": 5,
+      "moodComment": "Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+      "stressScore": 5,
+      "stressComment": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+      "overallComment": "Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst.",
+      "duration": 2.5,
+      "timestamp": "1483921307"
+    },
+    ]
+    }
+  }
+   componentDidMount() {
+
+   }
+   
   render() {
     return (
       <MuiThemeProvider>
@@ -56,6 +93,7 @@ class ReceiverClient extends Component {
                 <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
                   <TableRow>
                     <TableHeaderColumn>Date</TableHeaderColumn>
+                    <TableHeaderColumn>Time Spent</TableHeaderColumn>
                     <TableHeaderColumn>Stress</TableHeaderColumn>
                     <TableHeaderColumn>Mood</TableHeaderColumn>
                     <TableHeaderColumn>Enviroment</TableHeaderColumn>
@@ -65,7 +103,29 @@ class ReceiverClient extends Component {
                 <TableBody displayRowCheckbox={false}>
                   <TableRow>
                     <TableRowColumn>4/1/14</TableRowColumn>
+                    <TableRowColumn>4
+                      <IconMenu
+                      iconButtonElement={<IconButton><Messsage /></IconButton>}
+                      anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                      targetOrigin={{horizontal: 'right', vertical: 'top'}}>
+
+                        <SectionTitle title={"Comment"} />
+                        <p>
+                          <b>Josh Martin</b> : I hope you can become more relaxed
+                        </p>
+
+                      </IconMenu>
+                    </TableRowColumn>
+                    <TableRowColumn>0:30</TableRowColumn>
+                    <TableRowColumn>2 </TableRowColumn>
+                    <TableRowColumn>clean </TableRowColumn>
+                    <TableRowColumn>need to finish </TableRowColumn>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableRowColumn>4/1/14</TableRowColumn>
                     <TableRowColumn>4</TableRowColumn>
+                    <TableRowColumn>0:30</TableRowColumn>
                     <TableRowColumn>2</TableRowColumn>
                     <TableRowColumn>clean</TableRowColumn>
                     <TableRowColumn>need to finish</TableRowColumn>
@@ -73,6 +133,7 @@ class ReceiverClient extends Component {
                   <TableRow>
                     <TableRowColumn>4/1/14</TableRowColumn>
                     <TableRowColumn>4</TableRowColumn>
+                    <TableRowColumn>0:30</TableRowColumn>
                     <TableRowColumn>2</TableRowColumn>
                     <TableRowColumn>clean</TableRowColumn>
                     <TableRowColumn>need to finish</TableRowColumn>
@@ -80,20 +141,7 @@ class ReceiverClient extends Component {
                   <TableRow>
                     <TableRowColumn>4/1/14</TableRowColumn>
                     <TableRowColumn>4</TableRowColumn>
-                    <TableRowColumn>2</TableRowColumn>
-                    <TableRowColumn>clean</TableRowColumn>
-                    <TableRowColumn>need to finish</TableRowColumn>
-                  </TableRow>
-                  <TableRow>
-                    <TableRowColumn>4/1/14</TableRowColumn>
-                    <TableRowColumn>4</TableRowColumn>
-                    <TableRowColumn>2</TableRowColumn>
-                    <TableRowColumn>clean</TableRowColumn>
-                    <TableRowColumn>need to finish</TableRowColumn>
-                  </TableRow>
-                  <TableRow>
-                    <TableRowColumn>4/1/14</TableRowColumn>
-                    <TableRowColumn>4</TableRowColumn>
+                    <TableRowColumn>0:30</TableRowColumn>
                     <TableRowColumn>2</TableRowColumn>
                     <TableRowColumn>clean</TableRowColumn>
                     <TableRowColumn>need to finish</TableRowColumn>
