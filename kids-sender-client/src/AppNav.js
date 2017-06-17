@@ -41,6 +41,7 @@ class AppNav extends Component{
           <IconButton onTouchTap={this.toggleSidebar}><NavigationClose /></IconButton>
           <MenuItem primaryText="Observation" leftIcon={<NextWeek />} />
           <MenuItem primaryText="Documents" leftIcon={<InsertDriveFile />} />
+          <MenuItem primaryText="Document Viewer" leftIcon={<InsertDriveFile />} />
           <MenuItem primaryText="MOU Agreement" leftIcon={<Assignment />} />
         </Drawer>
       </div>
