@@ -103,7 +103,6 @@ const FileListItems = this.state.files.map((file, index) =>
   src={this.state.files[index].src}
   key={index}
   leftAvatar={<Avatar icon={icons[this.state.files[index].category]}/>}
-  rightIcon={<ActionInfo />}
   primaryText={this.state.files[index].title}
   secondaryText={this.state.files[index].description + ', Uploaded By: ' + this.state.files[index].uploader}
   onClick={(e) => this.showDocument(e, index)}
