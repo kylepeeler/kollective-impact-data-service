@@ -1,3 +1,10 @@
-.document-viewer{
-height: 800px
+.document-viewer {
+  height: 800px;
+  width: 60%;
+  margin-right: 20px;
+  float: right;
+}
+
+.document-list {
+  float: left;
 }
