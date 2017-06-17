@@ -5,21 +5,23 @@ import MenuItem from 'material-ui/MenuItem';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
-import Assessment from 'material-ui/svg-icons/action/assessment';
 import NextWeek from 'material-ui/svg-icons/content/next-week';
 import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import Assignment from 'material-ui/svg-icons/action/assignment';
+import Paper from 'material-ui/Paper';
+
 
 
 class AppNav extends Component{
+
   constructor(props){
     super(props);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    injectTapEventPlugin();
     this.state = {
       sidebarOpen: false
     };
-    injectTapEventPlugin();
+
 
   }
 
@@ -30,6 +32,12 @@ class AppNav extends Component{
   }
 
   render(){
+    const mainContentStyle = {
+      height: 100,
+      margin: 20,
+      textAlign: 'center',
+      display: 'inline-block',
+    };
     return (
       <div>
         <AppBar
@@ -41,6 +49,7 @@ class AppNav extends Component{
           <IconButton onTouchTap={this.toggleSidebar}><NavigationClose /></IconButton>
           <MenuItem primaryText="Observation" leftIcon={<NextWeek />} />
           <MenuItem primaryText="Documents" leftIcon={<InsertDriveFile />} />
+          <MenuItem primaryText="Document Viewer" leftIcon={<InsertDriveFile />} />
           <MenuItem primaryText="MOU Agreement" leftIcon={<Assignment />} />
         </Drawer>
       </div>
