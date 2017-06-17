@@ -7,6 +7,7 @@ class Chart extends React.Component {
     var beginning = this.props.environmentData[0]["date"];
     var end = this.props.environmentData[this.props.environmentData.length-1]["date"];
     const chartStyle = {
+      width: '70%',
     }
     return (
           <div style={chartStyle}>
@@ -16,7 +17,7 @@ class Chart extends React.Component {
                 {name: "Stress"},
                 ]}
             />
-              <VictoryChart padding={{top: 10, bottom: 10, left: 50, right: 50}} width={300} height={100} theme={VictoryTheme.material}>
+          <VictoryChart padding={{top: 10, bottom: 30, left: 50, right: 50}} width={300} height={100} theme={VictoryTheme.material}>
                 <VictoryAxis  tickValues={[beginning, end]}/>
                 <VictoryAxis dependentAxis  tickValues={[1,2,3,4,5]}/>
                 <VictoryGroup>
