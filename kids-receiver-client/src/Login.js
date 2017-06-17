@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import * as firebase from 'firebase';
 import './Login.css';
-import {PSClickWrap} from 'pactsafe-react-sdk';
+
 
 class Login extends Component {
     constructor(props) {
@@ -57,16 +57,14 @@ class Login extends Component {
     render() {
       return (
         <div className="login-panel">
-          <h1> Login to K.I.D.S. </h1><br />
+          <h1> Login to K.I.D.S </h1><br />
           <form >
             <p>Email</p>
             <TextField type="text" value={this.state.email} onChange={this.updateEmail}/>
             <p>Password</p>
             <TextField type="password" value={this.state.password} onChange={this.updatePassword}/>
             <br />
-      <PSClickWrap accessId="29ea80d9-d386-4cfd-a280-505e802ee732" signerIDSelector="email" groupKey="kids-receiver-clickwrap" testMode={true} displayAll={false}/>
-
-        <RaisedButton type="submit" label="Login" primary={true} onClick={this.handleSubmit}/>
+            <RaisedButton type="submit" label="Login" primary={true} onClick={this.handleSubmit}/>
           </form>
         </div>
       )
