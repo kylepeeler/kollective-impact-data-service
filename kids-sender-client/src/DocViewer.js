@@ -1,24 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter,  Route, Link} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import DocumentViewer as Component from ('itsa-react-docviewer')
+import Component from 'itsa-react-docviewer';
+import './DocViewer.css'
 
-class DocViewer extends Component {
+class DocViewer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      allowFullScreen: true,
-      src: "http://projects.itsasbreuk.nl/react-components/itsa-docviewer/example.pdf"
-    }
   }
-};
 
 render(){
+  const documentViewerStyle = {
+    height: 400
+  }
+  const props = {
+    allowFullScreen: true,
+    src: "http://projects.itsasbreuk.nl/react-components/itsa-docviewer/example.pdf",
+    className: 'document-viewer'
+  };
   return (
     <Component {...props} />
-    //document.getElementById("component-container")
-  )
+  );
+}
 }
 
 export default DocViewer;
