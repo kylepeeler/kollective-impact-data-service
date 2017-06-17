@@ -8,6 +8,7 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import NextWeek from 'material-ui/svg-icons/content/next-week';
 import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import Assignment from 'material-ui/svg-icons/action/assignment';
+import {Link} from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 
 
@@ -47,10 +48,13 @@ class AppNav extends Component{
         {this.props.children}
         <Drawer open={this.state.sidebarOpen}>
           <IconButton onTouchTap={this.toggleSidebar}><NavigationClose /></IconButton>
+          <Link to="/observation" style={{textDecoration: 'none'}} onClick={this.toggleSidebar}>
           <MenuItem primaryText="Observation" leftIcon={<NextWeek />} />
-          <MenuItem primaryText="Documents" leftIcon={<InsertDriveFile />} />
+          </Link>
+          <Link to="/docs" style={{textDecoration: 'none'}} onClick={this.toggleSidebar}>
           <MenuItem primaryText="Document Viewer" leftIcon={<InsertDriveFile />} />
-          <MenuItem primaryText="MOU Agreement" leftIcon={<Assignment />} />
+          </Link>
+          {/*<MenuItem primaryText="MOU Agreement" leftIcon={<Assignment />} />*/}
         </Drawer>
       </div>
     );

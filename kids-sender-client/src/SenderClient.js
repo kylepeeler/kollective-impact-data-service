@@ -13,20 +13,31 @@ import Database from './Database';
 class SenderClient extends Component {
   constructor(props) {
     super(props);
-    Database.init()
+    this.setInitialView = this.setInitialView.bind(this);
+    Database.init();
+    this.setInitialView();
     this.state = {
       loaded: false,
       initialView: null
     }
+  }
+
+  setInitialView(){
+    firebase.auth().onAuthStateChanged((user)=>{
+      let initialView = user ? Observation : Login;
+      this.setState({
+        initialView: initialView
+      })
+    })
   }
   render() {
     return (
       <MuiThemeProvider>
         <BrowserRouter>
           <AppNav>
-            <Route exact path="/" component={Login}/>
-            <Route path="/observation" component={Observation}/>
-            <Route path="/docs" component={DocViewer}/>
+            <Route exact path="/" component={this.state.initialView}/>
+            <Route path="/observation" component={this.state.initialView != Login ? Observation : Login}/>
+            <Route path="/docs" component={this.state.initialView != Login ? DocViewer : Login}/>
             <Route path="/login" component={Login}/>
             {/*<Route path="/mou" component={MOUAgreement}/>*/}
           </AppNav>
