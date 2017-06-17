@@ -10,7 +10,9 @@ import Assessment from 'material-ui/svg-icons/action/assessment';
 import NextWeek from 'material-ui/svg-icons/content/next-week';
 import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import Assignment from 'material-ui/svg-icons/action/assignment';
+import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 import {Link} from 'react-router-dom';
+import * as firebase from 'firebase';
 
 
 class AppNav extends Component{
@@ -30,6 +32,16 @@ class AppNav extends Component{
     })
   }
 
+  async logoutuser(){
+  try{
+    await firebase.auth().signOut();
+  }catch(e){
+    console.log(e);
+  }
+  this.toggleSidebar();
+}
+
+
   render(){
     return (
       <div>
@@ -46,6 +58,7 @@ class AppNav extends Component{
           <Link to="/docs" style={{textDecoration: 'none'}} onClick={this.toggleSidebar}>
           <MenuItem primaryText="Documents upload" leftIcon={<InsertDriveFile />} />
           </Link>
+          <MenuItem primaryText="Log Out" leftIcon={<ExitToApp />}  onClick={this.logoutuser}/>
         </Drawer>
       </div>
     );
