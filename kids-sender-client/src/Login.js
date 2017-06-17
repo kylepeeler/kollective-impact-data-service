@@ -3,6 +3,7 @@ import AppNav from './AppNav';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import * as firebase from 'firebase';
+import './Login.css';
 
 
 class Login extends Component {
@@ -55,14 +56,17 @@ class Login extends Component {
 
     render() {
       return (
-        <form>
-          <p>Email</p>
-          <TextField type="text" value={this.state.email} onChange={this.updateEmail}/>
-          <p>Password</p>
-          <TextField type="password" value={this.state.password} onChange={this.updatePassword}/>
-          <br />
-          <RaisedButton type="submit" label="Login" primary={true} onClick={this.handleSubmit}/>
-        </form>
+        <div className="login-panel">
+          <h1> Login to K.I.D.S </h1><br />
+          <form >
+            <p>Email</p>
+            <TextField type="text" value={this.state.email} onChange={this.updateEmail}/>
+            <p>Password</p>
+            <TextField type="password" value={this.state.password} onChange={this.updatePassword}/>
+            <br />
+            <RaisedButton type="submit" label="Login" primary={true} onClick={this.handleSubmit}/>
+          </form>
+        </div>
       )
     }
 }
