@@ -63,14 +63,14 @@ class ChartContainer extends React.Component {
     var beginning = environmentData[0]["date"];
     var end = environmentData[environmentData.length-1]["date"];
     return (
-      <Paper zDepth={2} style={containerStyle}>
+      <div>
         <h2>Metrics</h2>
         <Chart
           environmentData = {environmentData}
           moodData = {moodData}
           stressData = {stressData}
         />
-      </Paper>
+      </div>
     )
   }
 }

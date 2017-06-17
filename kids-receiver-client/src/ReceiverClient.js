@@ -21,7 +21,7 @@ import {
 } from 'material-ui/Table';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ChartContainer from './chart-components/ChartContainer.js'
+import ChartContainer from './components/chart/ChartContainer'
 class ReceiverClient extends Component {
   render() {
     return (
@@ -29,9 +29,9 @@ class ReceiverClient extends Component {
         <BrowserRouter>
           <AppNav>
             <div id="section">
-            <Section style={{flex:1,marginRight:20,marginLeft:20, marginTop: 10,minHeight:300,}}>
+            <Section style={{flex:1,marginRight:20,marginLeft:20, marginTop: 10,paddingLeft:20,minHeight:300,}}>
               <div>
-                <SectionTitle title={"hello world"}/>
+              <ChartContainer/>
               </div>
             </Section>
           </div>
