@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import Send from 'material-ui/svg-icons/content/send';
 import RaisedButton from 'material-ui/RaisedButton';
 import ObservationTime from './ObservationTime';
+import * as firebase from 'firebase';
 
 
 
@@ -81,6 +82,11 @@ class Observation extends Component{
 
   submitToFirebase(){
     console.log('we send state to firebase');
+    var newObservationkey = firebase.database().ref().child();
+    var updates = {};
+    updates[newObservationkey] = this.state;
+    firebase.database().ref().push(updates);
+
   }
 
   render(){
