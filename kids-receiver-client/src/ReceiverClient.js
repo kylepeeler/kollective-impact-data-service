@@ -21,6 +21,7 @@ import {
 } from 'material-ui/Table';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ChartContainer from './chart-components/ChartContainer.js'
 class ReceiverClient extends Component {
   render() {
     return (
