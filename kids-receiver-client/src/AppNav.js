@@ -10,6 +10,7 @@ import Assessment from 'material-ui/svg-icons/action/assessment';
 import NextWeek from 'material-ui/svg-icons/content/next-week';
 import InsertDriveFile from 'material-ui/svg-icons/editor/insert-drive-file';
 import Assignment from 'material-ui/svg-icons/action/assignment';
+import {Link} from 'react-router-dom';
 
 
 class AppNav extends Component{
@@ -39,8 +40,12 @@ class AppNav extends Component{
         {this.props.children}
         <Drawer open={this.state.sidebarOpen}>
           <IconButton onTouchTap={this.toggleSidebar}><NavigationClose /></IconButton>
+          <Link to="/" style={{textDecoration: 'none'}} onClick={this.toggleSidebar}>
           <MenuItem primaryText="Dashboard" leftIcon={<NextWeek />} />
+          </Link>
+          <Link to="/docs" style={{textDecoration: 'none'}} onClick={this.toggleSidebar}>
           <MenuItem primaryText="Documents upload" leftIcon={<InsertDriveFile />} />
+          </Link>
         </Drawer>
       </div>
     );

@@ -35,8 +35,8 @@ class DocumentUploader extends React.Component {
       marginRight: `auto`
     };
     return (
-        <div style={containerStyle}>
-          <Paper zDepth={2}>
+        <Paper zDepth={2} style={{margin: 20}}>
+          <div style={containerStyle}>
             <h2>Document Uploader</h2>
             <TextField placeholder="Title"></TextField><br/>
             <TextField placeholder="Uploader Name"></TextField><br/>
@@ -65,8 +65,8 @@ class DocumentUploader extends React.Component {
             </RadioButtonGroup>
             <RaisedButton label="Submit" primary={true} style={submitButtonStyle} icon={<Send />} labelPosition="before"/>
 
+            </div>
           </Paper>
-        </div>
     )
   }
 }
