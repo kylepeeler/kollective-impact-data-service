@@ -18,6 +18,19 @@
   font-size: large;
 }
 
+#section{
+   display: flex;
+   align-self: center;
+   justify-content:center;
+}
+
+div[role=menu]{
+  padding-top: 0 !important; 
+}
+.avg-data {
+  text-align: center;
+  font-size: 80px;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
