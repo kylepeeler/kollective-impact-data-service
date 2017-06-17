@@ -28,6 +28,7 @@ class ReceiverClient extends Component {
       <MuiThemeProvider>
         <BrowserRouter>
           <AppNav>
+          <ChartContainer/>
             <div id="section">
             <Section style={{flex:1,marginRight:20,marginLeft:20, marginTop: 10,minHeight:300,}}>
               <div>
