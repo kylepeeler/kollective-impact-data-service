@@ -16,10 +16,11 @@ class AppNav extends Component{
   constructor(props){
     super(props);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    injectTapEventPlugin();
     this.state = {
       sidebarOpen: false
     };
-    injectTapEventPlugin();
+
 
   }
 
