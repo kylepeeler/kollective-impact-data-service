@@ -16,7 +16,7 @@ class ReceiverClient extends Component {
               {/*<Route path="/docs" component={DocumentViewer}/>*/}
               {/*<Route path="/mou" component={MOUAgreement}/>*/}
             </AppNav>
-            <ChartContainer style="width:30%"/>
+            <ChartContainer/>
           </div>
 
         </BrowserRouter>
