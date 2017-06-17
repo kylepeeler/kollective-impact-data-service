@@ -4284,9 +4284,9 @@ package-json@^2.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-pactsafe-react-sdk@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/pactsafe-react-sdk/-/pactsafe-react-sdk-1.0.3.tgz#fd86bc4ae9c090eacf3e90974947ec7b2eecaeec"
+pactsafe-react-sdk@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/pactsafe-react-sdk/-/pactsafe-react-sdk-1.0.5.tgz#26313a458d6b88e0c12a9ac6b1c1de4e1d8bb52a"
   dependencies:
     classnames "^2.1.2"
     prop-types "^15.5.10"
