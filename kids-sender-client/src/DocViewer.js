@@ -16,14 +16,34 @@ import './DocViewer.css'
 class DocViewer extends React.Component {
   constructor(props) {
     super(props);
+    this.showDocument = this.showDocument.bind(this);
     this.state = {
-      files: {
-        
-      }
-
+      currentFileOpen: 0,
+      files: [
+        {
+          "title": "Birth Certificate",
+          "src": "http://dhss.delaware.gov/dph/ss/files/birth.pdf",
+          "uploader": "John Smith",
+          "timestamp": "1497715391",
+          "description": "birth certificate sample"
+        },
+        {
+          "title": "Social Security Card",
+          "src": "https://www.ssa.gov/pubs/EN-05-10002.pdf",
+          "uploader": "John Smith",
+          "timestamp": "1497715391",
+          "description": "ssn sample"
+        }
+      ]
     }
     console.log(this.state.files);
   }
+
+showDocument(e, index){
+  this.setState({
+    currentFileOpen: index
+  });
+}
 
 render(){
   const documentViewerStyle = {
@@ -31,9 +51,20 @@ render(){
   }
   const props = {
     allowFullScreen: true,
-    src: "http://projects.itsasbreuk.nl/react-components/itsa-docviewer/example.pdf",
+    src: this.state.files[this.state.currentFileOpen].src,
     className: 'document-viewer'
   };
+const FileListItems = this.state.files.map((file, index) =>
+  <ListItem
+  src={this.state.files[index].src}
+  key={index}
+  leftAvatar={<Avatar icon={<EditorInsertDriveFile />}/>}
+  rightIcon={<ActionInfo />}
+  primaryText={this.state.files[index].title}
+  secondaryText={this.state.files[index].description + ', Uploaded By: ' + this.state.files[index].uploader}
+  onClick={(e) => this.showDocument(e, index)}
+/>)
+
   return (
     <div>
       <List className="document-list">
@@ -41,18 +72,7 @@ render(){
       <Divider inset={true} />
       <List>
         <Subheader inset={true}>Files</Subheader>
-        <ListItem
-          leftAvatar={<Avatar icon={<EditorInsertDriveFile />}/>}
-          rightIcon={<ActionInfo />}
-          primaryText="Vacation itinerary"
-          secondaryText="Jan 20, 2014"
-        />
-        <ListItem
-          leftAvatar={<Avatar icon={<EditorInsertDriveFile />}/>}
-          rightIcon={<ActionInfo />}
-          primaryText="Kitchen remodel"
-          secondaryText="Jan 10, 2014"
-        />
+        {FileListItems}
       </List>
 
       <Component {...props} />
