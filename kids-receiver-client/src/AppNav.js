@@ -19,6 +19,7 @@ class AppNav extends Component{
   constructor(props){
     super(props);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.logoutuser = this.logoutuser.bind(this);
     this.state = {
       sidebarOpen: false
     };
