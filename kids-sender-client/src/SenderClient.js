@@ -3,6 +3,7 @@ import {BrowserRouter,  Route, Link} from 'react-router-dom';
 import './App.css';
 import AppNav from './AppNav';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Observation from './Observation';
 import DocViewer from './DocViewer';
 import Login from './Login';
 import * as firebase from 'firebase';
@@ -23,7 +24,8 @@ class SenderClient extends Component {
       <MuiThemeProvider>
         <BrowserRouter>
           <AppNav>
-            <Route exact path="/" />
+            <Route exact path="/" component={Login}/>
+            <Route path="/observation" component={Observation}/>
             <Route path="/docs" component={DocViewer}/>
             <Route path="/login" component={Login}/>
             {/*<Route path="/mou" component={MOUAgreement}/>*/}
