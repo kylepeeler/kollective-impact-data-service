@@ -1,3 +1,4 @@
+/*global _ps*/
 import React, {Component} from 'react';
 import AppNav from './AppNav';
 import TextField from 'material-ui/TextField';
@@ -22,25 +23,31 @@ class Login extends Component {
 
 
     async handleSubmit(event) {
-      event.preventDefault();
+    event.preventDefault();
+    if (document.getElementById('email').value === ''){
+          alert('You must provide an email before logging in! ;)');
+    } else if (_ps.getByKey('kids-receiver-clickwrap').allChecked()){
+        try {
+        await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
 
-       try {
-           await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
+       //  firebase.auth().onAuthStateChanged(function(user) {
+       //    if(!user.emailVerified){
+       //      alert("You cannot login until you verify your account");
+       //      user.sendEmailVerification();
+       //      alert("Another email has been sent to "+user.email)
+       //    }
+       // //
+       //  });
 
-          //  firebase.auth().onAuthStateChanged(function(user) {
-          //    if(!user.emailVerified){
-          //      alert("You cannot login until you verify your account");
-          //      user.sendEmailVerification();
-          //      alert("Another email has been sent to "+user.email)
-          //    }
-          // //
-          //  });
-
-       } catch (e) {
+        } catch (e) {
           alert(e.toString());
-       }
+        }
+    }else{
+      alert('You must accept the ClickWrap before you can submit!');
+    }
 
-   }
+
+ }
 
    updatePassword(event, value) {
      this.setState({
@@ -66,6 +73,7 @@ class Login extends Component {
             <TextField type="password" value={this.state.password} onChange={this.updatePassword}/>
             <br />
             <RaisedButton type="submit" label="Login" primary={true} onClick={this.handleSubmit}/>
+            <br/>
             <PSClickWrap accessId="29ea80d9-d386-4cfd-a280-505e802ee732" signerIDSelector="email" groupKey="kids-receiver-clickwrap" testMode={true} displayAll={false}/>
 
           </form>
