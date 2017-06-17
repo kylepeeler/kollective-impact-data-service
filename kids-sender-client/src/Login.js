@@ -59,7 +59,7 @@ class Login extends Component {
       return (
         <div>
         <div className="login-panel">
-          <h1> Login to K.I.D.S. </h1><br />
+          <h1> Login to K.I.D.S. Sender</h1><br />
           <form >
             <p>Email</p>
             <TextField type="text" value={this.state.email} onChange={this.updateEmail} id="email"/>
